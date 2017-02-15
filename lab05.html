@@ -4,12 +4,19 @@
     <script>
         function loadXMLDoc() {
             var xmlhttp;
+            var xmlhttp1;
+            var xmlhttp2;
             if (window.XMLHttpRequest) {
 
                 xmlhttp = new XMLHttpRequest();
-            } else {
+                xmlhttp1 = new XMLHttpRequest();
+                xmlhttp2 = new XMLHttpRequest();
 
+            } else {
                 xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+                xmlhttp1 = new ActiveXObject("Microsoft.XMLHTTP");
+                xmlhttp2 = new ActiveXObject("Microsoft.XMLHTTP");
+
             }
 
             xmlhttp.onreadystatechange = function() {
@@ -20,17 +27,31 @@
             }
             xmlhttp.open("GET", "kamkom.php", true);
             xmlhttp.send();
+
+            xmlhttp1.onreadystatechange = function() {
+                document.getElementById("myDiv1").innerHTML = xmlhttp1.responseText;
+            }
+            xmlhttp1.open("GET", "http://angsila.cs.buu.ac.th/~58160021/887371/lab05/kamkom.php", true);
+            xmlhttp1.send();
+
+
+            xmlhttp2.onreadystatechange = function() {
+                document.getElementById("myDiv2").innerHTML = xmlhttp2.responseText;
+            }
+            xmlhttp2.open("GET", "http://angsila.cs.buu.ac.th/~58160422/887371/lab05/kamkom.php", true);
+            xmlhttp2.send();
         }
     </script>
 </head>
 
 <body>
 
-    <div id="myDiv">
-        <h2>
-            Let AJAX change this text
-        </h2>
-    </div>
+    <div id="myDiv"></div>
+    <div id="myDiv1"></div>
+    <div id="myDiv2"></div>
+    <h2>
+        Let AJAX change this text
+    </h2>
 
     <button type="button" onclick="loadXMLDoc()">
 	Change Content
