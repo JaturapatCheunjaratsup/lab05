@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html>
 
 <head>
@@ -6,10 +5,13 @@
         function loadXMLDoc() {
             var xmlhttp;
             if (window.XMLHttpRequest) {
+
                 xmlhttp = new XMLHttpRequest();
             } else {
+
                 xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
             }
+
             xmlhttp.onreadystatechange = function() {
                 alert(xmlhttp.readyState + " : " + xmlhttp.status);
                 if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
@@ -33,6 +35,25 @@
     <button type="button" onclick="loadXMLDoc()">
 	Change Content
 </button>
+    <br><br><br>
+
+    <table border=1 bgcolor="skyblue">
+        <tr>
+            <td align="center">
+                <h2>รูปภาพ</h2>
+            </td>
+            <td align="center">
+                <h2>คำอธิบาย</h2>
+            </td>
+        </tr>
+
+        <tr>
+            <td><img src="Pic/lab05.png" class="img-rounded" width="450"></td>
+            <td>5-12: สร้าง object XMLHttp Request<br>14: เรียกใช้ฟังก์ชัน พร้อมกับสร้างฟังก์ชันเพื่อใช้งาน<br>15: สร้าง pop-up แสดงขั้นตอน ต่อด้วย : และสถานะ เป็นขั้นๆไปเรื่อยๆ<br>16: สร้างเงื่อนไขว่า ถ้ามีขั้นตอน 4 ขั้นตอน และมีสถานะ 200 <br>17: ถ้าเป็นจริงให้เปลี่ยนตัวอักษรที่เรากำหนดไว้ในไฟล์
+                .txt<br> 20: เปิดไฟล์ที่เราสร้างไว้ <br> 21: ส่งไฟล์ที่เปิดไปยัง responseText<br>28: ตั้ง id ชื่อ myDiv เมื่อถึงขั้นตอนที่ 4 ให้เปลี่ยน เป็นสิ่งที่เราพิมพ์ข้อความถัดไป<br>34: สร้างปุ่มเพื่อกดเปลี่ยนขั้นตอนถัดไป <br>35: ให้ปุ่มชื่อว่า Change
+                Content</td>
+        </tr>
+
 </body>
 
 </html>
